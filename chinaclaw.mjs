@@ -38,7 +38,12 @@ if (!fs.existsSync(CONFIG_PATH)) {
   };
 
   const config = {
-    gateway: { mode: "local", bind: "loopback", auth: { mode: "none" } },
+    gateway: {
+      mode: "local",
+      bind: "loopback",
+      auth: { mode: "none" },
+      controlUi: { dangerouslyDisableDeviceAuth: true },
+    },
     agents: {
       defaults: {
         model: {

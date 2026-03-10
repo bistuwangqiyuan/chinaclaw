@@ -82,6 +82,9 @@ export MOONSHOT_API_KEY=sk-your-moonshot-key
   ```
 - 若希望保留 token 认证：运行 `pnpm chinaclaw dashboard` 获取带 token 的 Control UI 地址，在浏览器打开该地址；或在 Control UI 设置中粘贴 token（token 可在 `pnpm chinaclaw config get gateway.auth.token` 查看，若网关曾自动生成并写入配置）。
 
+**若提示「device signature invalid」或「已断开与网关的连接」**（多为客户端缓存了旧设备凭证）：
+- 在 `gateway` 下增加 `"controlUi": { "dangerouslyDisableDeviceAuth": true }`，仅用于本机 loopback 时可关闭 Control UI 设备校验，避免旧 device token 导致拒绝连接。保存后重启网关。
+
 ### 永久设置环境变量
 
 Windows (PowerShell):
@@ -120,6 +123,14 @@ node chinaclaw.mjs channels status
 | **钉钉** | `dingtalk` | 在[钉钉开放平台](https://open.dingtalk.com)创建机器人 |
 | **企业微信** | `wecom` | 在[企业微信管理后台](https://work.weixin.qq.com)创建应用 |
 | **微信** | `wechat` | 需运行外部 webhook bridge |
+
+### 飞书 401 / api key invalid
+
+若发消息或连接飞书时出现 **HTTP 401** 或 **Your api key is invalid**：
+
+- **国内用户**：必须在 [open.feishu.cn](https://open.feishu.cn/app) 创建应用，并在配置中填写该应用的 **App ID** 与 **App Secret**；不要使用国际版 open.larksuite.com 的凭证。
+- 确认未填错 App ID（形如 `cli_xxx`）、App Secret（在应用「凭证与基础信息」中复制）。
+- 若使用国际版 Lark，请在飞书通道配置中设置 `domain: "lark"`，并使用 [open.larksuite.com](https://open.larksuite.com/app) 的应用凭证。
 
 ## 基于 OpenClaw
 
