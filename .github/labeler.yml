@@ -256,3 +256,15 @@
   - changed-files:
       - any-glob-to-any-file:
           - "extensions/talk-voice/**"
+"channel: dingtalk":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "extensions/dingtalk/**"
+"channel: wecom":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "extensions/wecom/**"
+"channel: wechat":
+  - changed-files:
+      - any-glob-to-any-file:
+          - "extensions/wechat/**"

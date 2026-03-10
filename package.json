@@ -1,19 +1,20 @@
 {
   "name": "openclaw",
   "version": "2026.3.13",
-  "description": "Multi-channel AI gateway with extensible messaging integrations",
-  "keywords": [],
-  "homepage": "https://github.com/openclaw/openclaw#readme",
+  "description": "Chinaclaw - 中国可用的 AI 助手平台，基于 OpenClaw，支持 DeepSeek、通义千问、智谱等国内大模型",
+  "keywords": ["chinaclaw", "openclaw", "ai", "assistant", "china", "deepseek", "qwen"],
+  "homepage": "https://github.com/chinaclaw/chinaclaw#readme",
   "bugs": {
-    "url": "https://github.com/openclaw/openclaw/issues"
+    "url": "https://github.com/chinaclaw/chinaclaw/issues"
   },
   "license": "MIT",
   "author": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/openclaw/openclaw.git"
+    "url": "git+https://github.com/chinaclaw/chinaclaw.git"
   },
   "bin": {
+    "chinaclaw": "chinaclaw.mjs",
     "openclaw": "openclaw.mjs"
   },
   "directories": {
@@ -23,6 +24,7 @@
   "files": [
     "CHANGELOG.md",
     "LICENSE",
+    "chinaclaw.mjs",
     "openclaw.mjs",
     "README-header.png",
     "README.md",
@@ -103,6 +105,10 @@
     "./plugin-sdk/diffs": {
       "types": "./dist/plugin-sdk/diffs.d.ts",
       "default": "./dist/plugin-sdk/diffs.js"
+    },
+    "./plugin-sdk/dingtalk": {
+      "types": "./dist/plugin-sdk/dingtalk.d.ts",
+      "default": "./dist/plugin-sdk/dingtalk.js"
     },
     "./plugin-sdk/feishu": {
       "types": "./dist/plugin-sdk/feishu.d.ts",
@@ -203,6 +209,14 @@
     "./plugin-sdk/zalouser": {
       "types": "./dist/plugin-sdk/zalouser.d.ts",
       "default": "./dist/plugin-sdk/zalouser.js"
+    },
+    "./plugin-sdk/wechat": {
+      "types": "./dist/plugin-sdk/wechat.d.ts",
+      "default": "./dist/plugin-sdk/wechat.js"
+    },
+    "./plugin-sdk/wecom": {
+      "types": "./dist/plugin-sdk/wecom.d.ts",
+      "default": "./dist/plugin-sdk/wecom.js"
     },
     "./plugin-sdk/account-id": {
       "types": "./dist/plugin-sdk/account-id.d.ts",
