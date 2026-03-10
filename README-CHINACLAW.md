@@ -65,7 +65,22 @@ export MOONSHOT_API_KEY=sk-your-moonshot-key
 
 ### 自定义配置
 
-编辑 `~/.chinaclaw/openclaw.json` 即可。完整配置参考 [chinaclaw.json.example](chinaclaw.json.example)。
+编辑 `~/.chinaclaw/openclaw.json` 即可。完整配置参考 [chinaclaw.json.example](chinaclaw.json.example).
+
+### 网关认证（解决「gateway token missing」）
+
+若客户端提示 **unauthorized: gateway token missing** 或「已断开与网关的连接」：
+
+- **新生成的配置**（首次运行 `pnpm chinaclaw` 后）已默认使用 `gateway.auth.mode: "none"`，本机连接无需 token。
+- **已有配置**：在 `~/.chinaclaw/openclaw.json` 的 `gateway` 下增加 `"auth": { "mode": "none" }`，保存后重启网关即可免 token 连接。示例：
+  ```json
+  "gateway": {
+    "mode": "local",
+    "bind": "loopback",
+    "auth": { "mode": "none" }
+  }
+  ```
+- 若希望保留 token 认证：运行 `pnpm chinaclaw dashboard` 获取带 token 的 Control UI 地址，在浏览器打开该地址；或在 Control UI 设置中粘贴 token（token 可在 `pnpm chinaclaw config get gateway.auth.token` 查看，若网关曾自动生成并写入配置）。
 
 ### 永久设置环境变量
 
