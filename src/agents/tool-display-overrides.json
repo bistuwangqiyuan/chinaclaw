@@ -49,6 +49,11 @@
         "cleanup"
       ]
     },
+    "opencode_run": {
+      "emoji": "📟",
+      "title": "OpenCode",
+      "detailKeys": ["task", "cwd", "timeoutSeconds"]
+    },
     "subagents": {
       "emoji": "🤖",
       "title": "Subagents",

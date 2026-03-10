@@ -1,0 +1,41 @@
+{
+  "name": "@openclaw/wechat",
+  "version": "2026.3.7",
+  "private": true,
+  "description": "OpenClaw WeChat (微信) channel plugin via webhook bridge",
+  "type": "module",
+  "dependencies": {},
+  "peerDependencies": {
+    "openclaw": ">=2026.3.2"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "wechat",
+      "label": "WeChat",
+      "selectionLabel": "WeChat (微信)",
+      "detailLabel": "WeChat",
+      "docsPath": "/channels/wechat",
+      "docsLabel": "wechat",
+      "blurb": "微信个人号/公众号消息机器人（需要外部 webhook bridge）。",
+      "aliases": [
+        "weixin",
+        "wx"
+      ],
+      "order": 38,
+      "quickstartAllowFrom": true
+    },
+    "install": {
+      "npmSpec": "@openclaw/wechat",
+      "localPath": "extensions/wechat",
+      "defaultChoice": "local"
+    }
+  }
+}

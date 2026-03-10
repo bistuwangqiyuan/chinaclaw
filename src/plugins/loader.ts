@@ -136,6 +136,7 @@ const pluginSdkScopedAliasEntries = [
     distFile: "diagnostics-otel.js",
   },
   { subpath: "diffs", srcFile: "diffs.ts", distFile: "diffs.js" },
+  { subpath: "dingtalk", srcFile: "dingtalk.ts", distFile: "dingtalk.js" },
   { subpath: "feishu", srcFile: "feishu.ts", distFile: "feishu.js" },
   {
     subpath: "google-gemini-cli-auth",
@@ -193,6 +194,8 @@ const pluginSdkScopedAliasEntries = [
   { subpath: "voice-call", srcFile: "voice-call.ts", distFile: "voice-call.js" },
   { subpath: "zalo", srcFile: "zalo.ts", distFile: "zalo.js" },
   { subpath: "zalouser", srcFile: "zalouser.ts", distFile: "zalouser.js" },
+  { subpath: "wechat", srcFile: "wechat.ts", distFile: "wechat.js" },
+  { subpath: "wecom", srcFile: "wecom.ts", distFile: "wecom.js" },
   { subpath: "account-id", srcFile: "account-id.ts", distFile: "account-id.js" },
   {
     subpath: "keyed-async-queue",

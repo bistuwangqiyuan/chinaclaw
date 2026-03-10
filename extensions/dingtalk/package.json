@@ -1,0 +1,43 @@
+{
+  "name": "@openclaw/dingtalk",
+  "version": "2026.3.7",
+  "private": true,
+  "description": "OpenClaw DingTalk (钉钉) channel plugin",
+  "type": "module",
+  "dependencies": {
+    "dingtalk-stream": "^2.1.4"
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.3.2"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "dingtalk",
+      "label": "DingTalk",
+      "selectionLabel": "DingTalk (钉钉)",
+      "detailLabel": "DingTalk",
+      "docsPath": "/channels/dingtalk",
+      "docsLabel": "dingtalk",
+      "blurb": "钉钉企业机器人，支持 Stream 模式和 HTTP 回调。",
+      "aliases": [
+        "dingding",
+        "ding"
+      ],
+      "order": 36,
+      "quickstartAllowFrom": true
+    },
+    "install": {
+      "npmSpec": "@openclaw/dingtalk",
+      "localPath": "extensions/dingtalk",
+      "defaultChoice": "local"
+    }
+  }
+}

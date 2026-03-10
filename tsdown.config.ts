@@ -22,6 +22,7 @@ const pluginSdkEntrypoints = [
   "device-pair",
   "diagnostics-otel",
   "diffs",
+  "dingtalk",
   "feishu",
   "google-gemini-cli-auth",
   "googlechat",
@@ -47,6 +48,8 @@ const pluginSdkEntrypoints = [
   "voice-call",
   "zalo",
   "zalouser",
+  "wechat",
+  "wecom",
   "account-id",
   "keyed-async-queue",
 ] as const;
