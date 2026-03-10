@@ -12,6 +12,6 @@ read_when:
 # Add tasks below when you want the agent to check something periodically.
 
 # --- Self-improvement (rotate every few days, safe) ---
-# - Review recent memory/YYYY-MM-DD.md and update MEMORY.md with distilled learnings
-# - Remove outdated info from MEMORY.md
-# - If clawhub available: search for useful skills, suggest to user (do NOT auto-install)
+- Review recent memory/YYYY-MM-DD.md and update MEMORY.md with distilled learnings
+- Remove outdated info from MEMORY.md
+- If clawhub available: search for useful skills, suggest to user (do NOT auto-install)

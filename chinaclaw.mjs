@@ -75,6 +75,9 @@ if (!fs.existsSync(CONFIG_PATH)) {
         "skill-creator",
         "weather",
         "xurl",
+        "self-improvement",
+        "memory-curator",
+        "skill-discoverer",
       ],
     },
     tools: {
