@@ -1,0 +1,41 @@
+{
+  "name": "@openclaw/wecom",
+  "version": "2026.3.7",
+  "private": true,
+  "description": "OpenClaw WeCom (企业微信) channel plugin",
+  "type": "module",
+  "dependencies": {},
+  "peerDependencies": {
+    "openclaw": ">=2026.3.2"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "wecom",
+      "label": "WeCom",
+      "selectionLabel": "WeCom (企业微信)",
+      "detailLabel": "WeCom",
+      "docsPath": "/channels/wecom",
+      "docsLabel": "wecom",
+      "blurb": "企业微信应用消息机器人。",
+      "aliases": [
+        "wxwork",
+        "wechat-work"
+      ],
+      "order": 37,
+      "quickstartAllowFrom": true
+    },
+    "install": {
+      "npmSpec": "@openclaw/wecom",
+      "localPath": "extensions/wecom",
+      "defaultChoice": "local"
+    }
+  }
+}

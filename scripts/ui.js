@@ -89,10 +89,22 @@ function createSpawnOptions(cmd, args, envOverride) {
   };
 }
 
+function resolveSpawnCommand(cmd, args) {
+  if (!shouldUseShellForCommand(cmd)) {
+    return { command: cmd, argv: args };
+  }
+  // When shell=true on Windows, unquoted command paths with spaces (for example
+  // "C:\\Program Files\\...\\pnpm.CMD") are split by cmd.exe and fail as
+  // "'C:\\Program' is not recognized...".
+  const escapedCmd = `"${cmd.replace(/"/g, '\\"')}"`;
+  return { command: escapedCmd, argv: args };
+}
+
 function run(cmd, args) {
   let child;
   try {
-    child = spawn(cmd, args, createSpawnOptions(cmd, args));
+    const { command, argv } = resolveSpawnCommand(cmd, args);
+    child = spawn(command, argv, createSpawnOptions(cmd, args));
   } catch (err) {
     console.error(`Failed to launch ${cmd}:`, err);
     process.exit(1);
@@ -113,7 +125,8 @@ function run(cmd, args) {
 function runSync(cmd, args, envOverride) {
   let result;
   try {
-    result = spawnSync(cmd, args, createSpawnOptions(cmd, args, envOverride));
+    const { command, argv } = resolveSpawnCommand(cmd, args);
+    result = spawnSync(command, argv, createSpawnOptions(cmd, args, envOverride));
   } catch (err) {
     console.error(`Failed to launch ${cmd}:`, err);
     process.exit(1);

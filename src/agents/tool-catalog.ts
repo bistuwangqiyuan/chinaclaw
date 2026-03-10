@@ -146,6 +146,14 @@ const CORE_TOOL_DEFINITIONS: CoreToolDefinition[] = [
     includeInOpenClawGroup: true,
   },
   {
+    id: "opencode_run",
+    label: "opencode_run",
+    description: "Run OpenCode CLI with a task",
+    sectionId: "sessions",
+    profiles: ["coding"],
+    includeInOpenClawGroup: true,
+  },
+  {
     id: "subagents",
     label: "subagents",
     description: "Manage sub-agents",
