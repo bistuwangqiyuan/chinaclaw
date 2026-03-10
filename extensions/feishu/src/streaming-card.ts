@@ -69,7 +69,11 @@ async function getToken(creds: Credentials): Promise<string> {
   });
   if (!response.ok) {
     await release();
-    throw new Error(`Token request failed with HTTP ${response.status}`);
+    const hint =
+      response.status === 401
+        ? " Use open.feishu.cn (China) or open.larksuite.com with domain: 'lark' (international); check App ID and App Secret."
+        : "";
+    throw new Error(`Feishu token request failed: HTTP ${response.status}.${hint}`);
   }
   const data = (await response.json()) as {
     code: number;
@@ -79,7 +83,11 @@ async function getToken(creds: Credentials): Promise<string> {
   };
   await release();
   if (data.code !== 0 || !data.tenant_access_token) {
-    throw new Error(`Token error: ${data.msg}`);
+    const authHint =
+      data.code === 99991401 || /invalid|auth|key/i.test(data.msg ?? "")
+        ? " Use open.feishu.cn (China) or open.larksuite.com + domain: 'lark' (international); verify App ID and App Secret."
+        : "";
+    throw new Error(`Feishu token error: ${data.msg ?? "unknown"}${authHint}`);
   }
   tokenCache.set(key, {
     token: data.tenant_access_token,
