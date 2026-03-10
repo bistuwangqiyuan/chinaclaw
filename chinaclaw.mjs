@@ -48,6 +48,42 @@ if (!fs.existsSync(CONFIG_PATH)) {
       },
     },
     models: { mode: "merge", providers },
+    skills: {
+      allowBundled: [
+        "coding-agent",
+        "discord",
+        "eightctl",
+        "gemini",
+        "gh-issues",
+        "gifgrep",
+        "github",
+        "himalaya",
+        "imsg",
+        "mcporter",
+        "nano-pdf",
+        "notion",
+        "obsidian",
+        "sag",
+        "slack",
+        "summarize",
+        "canvas",
+        "clawhub",
+        "gog",
+        "healthcheck",
+        "model-usage",
+        "session-logs",
+        "skill-creator",
+        "weather",
+        "xurl",
+      ],
+    },
+    tools: {
+      web: {
+        search: {
+          provider: "kimi",
+        },
+      },
+    },
   };
 
   fs.writeFileSync(CONFIG_PATH, JSON.stringify(config, null, 2), "utf-8");
