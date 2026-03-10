@@ -47,6 +47,21 @@ pnpm chinaclaw
 - Gateway 本地模式配置（`gateway.mode: "local"`）
 - DeepSeek 和通义千问 Provider 定义
 - 默认模型：`deepseek/deepseek-chat`，备选：`dashscope/qwen-max`
+- Skills 白名单：coding-agent, discord, gemini, github, notion, obsidian, slack 等 26 项
+- 搜索功能：默认使用 Kimi（需设置 `MOONSHOT_API_KEY`）
+
+### 搜索功能
+
+搜索使用 Kimi (Moonshot) 作为默认 provider。设置 `MOONSHOT_API_KEY` 后即可使用 `web_search` 工具：
+
+```bash
+# Windows:
+set MOONSHOT_API_KEY=sk-your-moonshot-key
+# Linux/macOS:
+export MOONSHOT_API_KEY=sk-your-moonshot-key
+```
+
+也支持其他搜索 provider（Brave、Perplexity、Gemini、Grok），设置对应 API Key 即可。
 
 ### 自定义配置
 
