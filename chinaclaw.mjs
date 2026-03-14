@@ -89,6 +89,9 @@ if (!fs.existsSync(CONFIG_PATH)) {
       web: {
         search: {
           provider: "kimi",
+          kimi: {
+            baseUrl: "https://api.moonshot.cn/v1",
+          },
         },
       },
     },
